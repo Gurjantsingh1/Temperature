@@ -33,7 +33,7 @@ const Temperature = () => {
 	return (
 		<div className='temp-container'>
 			<div className='temperature-display-container'>
-				<div className={`temperature-displa ${temperatureColor}`}>{temperatureValue}</div>
+				<div className={`temperature-display ${temperatureColor}`}>{temperatureValue}</div>
 			</div>
 			<div className='button-container'>
                 <button onClick={decreaseTemperature}>-</button>
