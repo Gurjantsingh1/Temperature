@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 const Temperature = () => {
 	const [temperatureValue, setTemperatureValue] = useState(10);
-	const [temperatureColor, setTemperatureColor] = useState('cold');
+	
     const [temp, setTemp] = useState("C")
 	function convertTemperature(){
 		if (temp === "F"){
@@ -18,22 +18,18 @@ const Temperature = () => {
 		const newTemperature = temperatureValue + 1;
 		setTemperatureValue(newTemperature);
 
-		if (newTemperature >= 16) {
-			setTemperatureColor('hot');
-		}
+		
 	};
 	const decreaseTemperature = () => {
 		const newTemperature = temperatureValue - 1;
 		setTemperatureValue(newTemperature);
-		if (newTemperature < 16) {
-			setTemperatureColor('cold');
-		}
+		
 	
 	};
 	return (
 		<div className='temp-container'>
 			<div className='temperature-display-container'>
-				<div className={`temperature-display ${temperatureColor}`}>{temperatureValue}</div>
+				<div className={`temperature-display`}>{temperatureValue}</div>
 			</div>
 			<div className='button-container'>
                 <button onClick={decreaseTemperature}>-</button>
