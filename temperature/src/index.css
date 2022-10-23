@@ -80,3 +80,19 @@ button:hover {
 .hot {
 	background: #d00202;
 }
+
+
+
+h1 {
+	color: red;
+	font-size: 60px;
+}
+.section{
+	display:block;
+	background-color: rgb(174, 250, 241);
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+
+}
+
+  
