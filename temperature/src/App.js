@@ -3,6 +3,7 @@ import './App.css';
 //import Temperature from './Temperature';
 //<Temperature />
 import Movie from './Movie';
+
 function App() {
   const movieList= [
     {
