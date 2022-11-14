@@ -1,11 +1,24 @@
-
-import './App.css';
-//import Temperature from './Temperature';
-//<Temperature />
-import Movie from './Movie';
+import "./App.css";
+import { Routes, Route} from "react-router-dom";
+import BookList from "./components/BookList";
 
 function App() {
-  const movieList= [
+  return (
+    <div className="App">
+   
+      <Routes>
+        <Route path="/" element={<BookList />} />
+      
+      </Routes>
+   
+    </div>
+  );
+}
+
+export default App;
+
+
+ /* const movieList= [
     {
       title:"The Godfather",
       year:"1972",
@@ -44,9 +57,5 @@ function App() {
                {movieList.map(
                 (movieObj)=>{return(<Movie title={movieObj.title} year={movieObj.year} genre={movieObj.genre} director={movieObj.director} age={movieObj.age}/>)}
                )}
-        
-    </div>
-  );
-}
-
-export default App;
+        */
+ 
