@@ -1,8 +1,14 @@
+
+import { Row, Col, Button } from "antd";
 import React, {useState,useEffect} from 'react'
 import '../App';
+
 import { API_URL } from '../API';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-const BookList = () => {
+
+const BookList = (props) => {
+
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
@@ -14,8 +20,40 @@ const BookList = () => {
         .catch((err) => console.log(err));
 
     }, []);
+     const navigate = useNavigate();
+  
+    const handleClick = () => {
+      console.log("SOmething Happened");
+      props.logout();
+      navigate("/login");
+    };
+  
+    useEffect(() => {
+      if(props.status){
+          console.log("Authentication successfull")
+      }
+      else{
+          navigate("/login")
+      }
+    }, [navigate, props.status])
 
-  return <div className='book-list'>
+  return <div className='book-list'> 
+   <row className="nav">
+    <nav> <br></br>
+    <ul>
+  <li ><a href="home">Home</a></li>
+  <li ><a href="about">About</a></li>
+</ul></nav><>
+<br></br><br></br>
+      <Row>
+        <Col>
+          <Button type="primary" onClick={handleClick}>
+            Logout
+          </Button>
+        </Col>
+      </Row>
+    </>
+    </row>
       {books.map((book)=> (
         <div key={book.id} className="book">
            <div><h2>Name:{book.name}</h2></div>
@@ -35,6 +73,7 @@ const BookList = () => {
             <div><h2>CatchPhrase{book.company.catchPhrase}</h2></div>
             <div><h2>BS:{book.company.bs}</h2></div>
 <br></br><br></br>
+
 
 
            </div>
